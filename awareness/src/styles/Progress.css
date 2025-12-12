@@ -1,0 +1,84 @@
+/* --- Progress Tracking Page Styles --- */
+
+.progress-page {
+    padding: 2rem 1rem;
+    background-color: var(--color-background);
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.session-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid var(--color-primary); /* Default accent color */
+    transition: transform 0.2s;
+}
+
+.session-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.session-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.session-date {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.risk-tag {
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: white;
+}
+
+/* Dynamic colors for risk tags */
+.risk-low { background-color: var(--color-risk-low); border-left-color: var(--color-risk-low); }
+.risk-medium { background-color: var(--color-risk-medium); border-left-color: var(--color-risk-medium); }
+.risk-high { background-color: var(--color-risk-high); border-left-color: var(--color-risk-high); }
+
+.session-card .risk-tag {
+    color: white; /* Ensure text is white for contrast on risk tags */
+}
+
+.session-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.session-details p {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.view-details-link {
+    color: var(--color-secondary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 3rem;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    margin-top: 2rem;
+}

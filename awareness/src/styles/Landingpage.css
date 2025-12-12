@@ -1,0 +1,212 @@
+/* --------------------------------------------------------------------------------
+   --- 1. GENERAL & TYPOGRAPHY ---
+   -------------------------------------------------------------------------------- */
+body {
+    background-color: #f8f9fa; /* Very light gray background */
+}
+
+.landing-page {
+    /* Ensure the landing page content is centered and contained */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Arial', sans-serif; /* Use a common, clean font */
+}
+
+/* --------------------------------------------------------------------------------
+   --- 2. HERO SECTION (The Big First Impression) ---
+   -------------------------------------------------------------------------------- */
+.hero-section {
+    background-color: var(--color-primary); /* Use Teal as the main hero background */
+    color: white;
+    padding: 6rem 1.5rem; /* Generous vertical padding */
+    border-radius: 0 0 50% 50% / 0 0 10% 10%; /* Subtle wave effect at the bottom */
+    margin-bottom: 4rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem; /* Large, impactful headline */
+    font-weight: 900;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+}
+
+.btn-large {
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 50px; /* Pill shape for CTA */
+}
+
+/* --------------------------------------------------------------------------------
+   --- 3. CORE FEATURES SECTION ---
+   -------------------------------------------------------------------------------- */
+.features-section {
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
+.features-section h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+/* Underline effect for the title */
+.features-section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--color-secondary); /* Use the accent color */
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px; /* Increased gap */
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Soft, professional shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    border-top: 5px solid var(--color-primary); /* Teal top border */
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card h3 {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+}
+
+.feature-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.feature-link {
+    display: inline-block;
+    font-weight: 700;
+    color: var(--color-secondary); /* Accent color for links */
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.feature-link:hover {
+    color: #ffb74d; /* Lighter shade of accent color on hover */
+}
+
+/* --------------------------------------------------------------------------------
+   --- 4. SAVINGS GOAL CTA (Prominent Bottom Section) ---
+   -------------------------------------------------------------------------------- */
+.savings-cta-section {
+    padding: 5rem 1.5rem;
+    background-color: #e0f2f1; /* Lightest shade of the primary color */
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.savings-cta-card {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem;
+    border-radius: 16px;
+    background-color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.savings-cta-card h3 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+}
+
+.savings-cta-card p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.cta-action {
+    flex-shrink: 0;
+}
+
+/* Ensure the button is styled correctly */
+.btn-secondary {
+    background-color: var(--color-secondary);
+    color: white;
+    border: 2px solid var(--color-secondary);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: #ffb74d;
+    border-color: #ffb74d;
+}
+
+/* --------------------------------------------------------------------------------
+   --- 5. MEDIA QUERIES (Responsiveness) ---
+   -------------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+    .savings-cta-card {
+        flex-direction: row;
+        text-align: left;
+    }
+    .cta-text {
+        flex: 3;
+        padding-right: 2rem;
+    }
+    .cta-action {
+        flex: 1;
+        text-align: right;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-section {
+        padding: 4rem 1rem;
+    }
+    .features-section h2 {
+        font-size: 2rem;
+    }
+}

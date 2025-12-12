@@ -1,0 +1,284 @@
+/* --- Root Variables (Adjusting to the colors in the image) --- */
+:root {
+    --color-primary-blue: #365478;   /* Deep Slate Blue (Hero Background) */
+    --color-secondary-orange: #f9a825; /* Warm Orange (CTA/Action Buttons) */
+    --color-light-background: #f0f4f7; /* Very Light Gray/Blueish (Section Backgrounds) */
+    --color-neutral-card: #ffffff;    /* White Card Background */
+    --color-text-dark: #333333;
+    --color-text-light: #f0f0f0;
+}
+
+/* --------------------------------------------------------------------------------
+   --- 1. GENERAL & TYPOGRAPHY ---
+   -------------------------------------------------------------------------------- */
+body {
+    background-color: var(--color-light-background);
+}
+
+.landing-page {
+    max-width: 1400px; /* Wider view to accommodate the layout */
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* --------------------------------------------------------------------------------
+   --- 2. HERO SECTION (Header, Hero Content, and Risk Check Card) ---
+   -------------------------------------------------------------------------------- */
+
+/* --- Navbar (Adjusting link colors for the blue hero background) --- */
+/* (This should target the elements BEFORE the main hero-section) 
+   If your Navbar is separate, ensure its links contrast with the background.
+*/
+.main-nav .nav-link {
+    color: var(--color-light-background); /* White/light gray links */
+    font-weight: 500;
+}
+.main-nav .nav-link:hover {
+    color: var(--color-secondary-orange);
+}
+
+
+.hero-section {
+    background-color: var(--color-primary-blue);
+    color: var(--color-text-light);
+    padding-top: 2rem; /* Reduced top padding since the navigation is here */
+    padding-bottom: 0; /* Handled by the wave structure */
+    margin-bottom: 0;
+    position: relative;
+    overflow: hidden; /* To contain the wave */
+}
+
+.hero-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 10rem; /* Increased bottom padding for content above wave */
+}
+
+.hero-text-container {
+    max-width: 45%;
+    text-align: left;
+    padding-right: 2rem;
+}
+
+.hero-text-container h1 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.hero-text-container p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+/* --- Risk Check Card (Floating Element) --- */
+.risk-check-card {
+    background: var(--color-neutral-card);
+    color: var(--color-text-dark);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 45%;
+    min-height: 250px;
+    margin-top: 1rem;
+}
+
+.risk-check-card h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-primary-blue);
+    margin-bottom: 0.75rem;
+}
+
+.risk-check-card p {
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+/* --- Wave Separator --- */
+.hero-wave-separator {
+    position: absolute;
+    bottom: -1px; /* Overlaps slightly to hide seams */
+    left: 0;
+    width: 100%;
+    height: 150px; /* Adjust height for the visual curve */
+    background-color: var(--color-light-background);
+    clip-path: ellipse(100% 100% at 50% 100%); /* Simulates a soft inward curve */
+    z-index: 1; 
+}
+
+
+/* --------------------------------------------------------------------------------
+   --- 3. CORE FEATURES SECTION ---
+   -------------------------------------------------------------------------------- */
+.features-section {
+    padding: 3rem 1.5rem 6rem;
+    text-align: center;
+    background-color: var(--color-light-background);
+}
+
+.features-section h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-text-dark);
+    margin-bottom: 4rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for wider view */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: var(--color-neutral-card);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); 
+    transition: transform 0.3s ease;
+    text-align: left;
+    min-height: 180px; /* Ensure cards have some uniform height */
+}
+
+.feature-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card h3 {
+    font-size: 1.2rem;
+    color: var(--color-primary-blue);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.feature-card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+/* --------------------------------------------------------------------------------
+   --- 4. SAVINGS GOAL CTA (Prominent Bottom Section) ---
+   -------------------------------------------------------------------------------- */
+.savings-cta-section {
+    padding: 6rem 1.5rem;
+    background-color: #e3f2fd; /* A slightly deeper light blue background */
+    text-align: center;
+    margin-top: 0;
+}
+
+.savings-cta-section h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-text-dark);
+    margin-bottom: 3rem;
+}
+
+.cta-cards-container {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cta-card {
+    flex: 1;
+    background-color: var(--color-neutral-card);
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.cta-card h3 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--color-text-dark);
+    margin-bottom: 1rem;
+}
+
+.cta-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+/* --------------------------------------------------------------------------------
+   --- 5. BUTTON STYLING (To match the visual identity) ---
+   -------------------------------------------------------------------------------- */
+
+/* Primary Button (Orange Fill - Used for "Learn More" in hero/CTA) */
+.btn-primary-orange {
+    background-color: var(--color-secondary-orange);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.75rem;
+    border-radius: 6px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.btn-primary-orange:hover {
+    background-color: #e69100; /* Darker orange on hover */
+}
+
+/* Secondary Button (Blue Outline/Fill - Used for "Plan Ahead") */
+.btn-secondary-blue {
+    background-color: var(--color-primary-blue);
+    color: white;
+    border: 2px solid var(--color-primary-blue);
+    padding: 0.75rem 1.75rem;
+    border-radius: 6px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.btn-secondary-blue:hover {
+    background-color: #2a415a; /* Darker blue */
+}
+
+/* --------------------------------------------------------------------------------
+   --- 6. MEDIA QUERIES (Responsiveness) ---
+   -------------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+    .hero-layout {
+        flex-direction: column;
+        padding-bottom: 5rem;
+    }
+    .hero-text-container, .risk-check-card {
+        max-width: 100%;
+        padding-right: 0;
+        margin-bottom: 2rem;
+    }
+    .risk-check-card {
+        margin-top: 0;
+    }
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .cta-cards-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-text-container h1 {
+        font-size: 2.5rem;
+    }
+    .risk-check-card h3 {
+        font-size: 1.5rem;
+    }
+    .hero-layout {
+        padding: 3rem 1rem 5rem;
+    }
+}

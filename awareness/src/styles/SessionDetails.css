@@ -1,0 +1,145 @@
+/* --- Session Details Page Styles --- */
+
+.session-details-page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+/* --- Overview Card (Risk Score) --- */
+.overview-card {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    color: white; /* Text color changes based on risk class */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 3rem;
+}
+
+.score-box, .risk-box {
+    text-align: center;
+}
+
+.overview-card .label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.8;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.score-value {
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.risk-level {
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+/* --- Dynamic Colors for Overview Card (Using classes from Progress.css) --- */
+.risk-low { background-color: var(--color-risk-low); }
+.risk-medium { background-color: var(--color-risk-medium); }
+.risk-high { background-color: var(--color-risk-high); }
+
+
+/* --- Sections --- */
+.recommendations-section, .answers-section {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+.recommendations-section h2, .answers-section h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* --- Recommendations List --- */
+.recommendation-list {
+    list-style: disc;
+    padding-left: 1.5rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.recommendation-item {
+    margin-bottom: 0.75rem;
+}
+
+.urgent-action {
+    list-style-type: none; /* Remove bullet */
+    background-color: #fee2e2; /* Red-100 */
+    padding: 1rem;
+    border-left: 4px solid #b91c1c; /* Red-700 */
+    border-radius: 4px;
+}
+
+/* --- Answers Grid --- */
+.answers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.answer-card {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid #eee;
+}
+
+.question-text {
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+
+.answer-text {
+    font-style: italic;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.answer-value {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--color-secondary);
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 600px) {
+    .overview-card {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .score-value {
+        font-size: 3rem;
+    }
+    .risk-level {
+        font-size: 2rem;
+    }
+}

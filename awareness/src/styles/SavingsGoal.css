@@ -1,0 +1,346 @@
+/* --- Root Variables (Assuming they exist elsewhere, but good to define structure) ---
+:root {
+    --color-primary: #009688;     // Teal
+    --color-secondary: #ff9800;   // Orange/Amber
+    --color-text: #333;
+    --color-background-soft: #f7f7f7;
+}
+*/
+
+/* --------------------------------------------------------------------------------
+   --- 1. GENERAL PAGE & WRAPPER STYLES ---
+   -------------------------------------------------------------------------------- */
+.savings-goal-page {
+    max-width: 900px; 
+    margin: 0 auto;
+    padding: 3rem 1.5rem; 
+    text-align: center;
+}
+
+.page-title {
+    font-size: 2.8rem; 
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+}
+
+.page-subtitle {
+    font-size: 1.15rem;
+    color: #4a4a4a;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.calculator-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem; 
+    background: white;
+    padding: 3rem; 
+    border-radius: 16px; 
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); 
+}
+
+/* --------------------------------------------------------------------------------
+   --- 2. MODE SWITCH TABS (CALCULATOR VS. TRACKER) ---
+   -------------------------------------------------------------------------------- */
+.mode-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px; 
+    margin-bottom: 2rem;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.tab-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #f0f8ff; 
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.tab-btn:hover {
+    background-color: #e0f2f1;
+}
+
+.active-tab {
+    background-color: var(--color-primary);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 150, 136, 0.4);
+}
+
+.goal-status-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-secondary);
+    background-color: #fff3e0; /* Light orange background */
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border-left: 5px solid var(--color-secondary);
+    text-align: left;
+}
+
+/* --------------------------------------------------------------------------------
+   --- 3. INPUT FORM & BUTTONS ---
+   -------------------------------------------------------------------------------- */
+.input-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 0.5rem;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 0.75rem; 
+    font-size: 1.1rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 1rem 1.25rem; 
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0, 150, 136, 0.2);
+    outline: none;
+}
+
+.btn-calculate {
+    padding: 1rem;
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-top: 1rem; 
+}
+
+/* --------------------------------------------------------------------------------
+   --- 4. CALCULATION RESULTS PANEL ---
+   -------------------------------------------------------------------------------- */
+.results-panel {
+    padding: 2.5rem; 
+    background-color: var(--color-background-soft);
+    border-radius: 12px;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.08); 
+}
+
+.results-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--color-secondary);
+    margin-bottom: 1rem;
+}
+
+.summary-text {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.time-display {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+}
+
+.months-value {
+    font-size: 4.5rem; 
+    font-weight: 900;
+    line-height: 1;
+    color: var(--color-primary);
+}
+
+.unit {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #555;
+}
+
+/* --------------------------------------------------------------------------------
+   --- 5. M-PESA CRITERIA BOX (Detailed Instructions) ---
+   -------------------------------------------------------------------------------- */
+.mpesa-criteria-box {
+    margin-top: 2.5rem;
+    padding: 2rem; 
+    border: 2px solid var(--color-primary);
+    border-radius: 10px;
+    background-color: #e6f7f5;
+    text-align: left;
+}
+
+.mpesa-criteria-box h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    border-bottom: 1px dashed var(--color-primary-light);
+    padding-bottom: 0.75rem;
+}
+
+.mpesa-criteria-box ol {
+    list-style: none; 
+    counter-reset: step-counter; 
+    padding-left: 0;
+}
+
+.mpesa-criteria-box li {
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    color: #333;
+    position: relative;
+    padding-left: 2.5rem;
+}
+
+.mpesa-criteria-box li::before {
+    content: counter(step-counter);
+    counter-increment: step-counter;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 28px; /* Slightly larger circles */
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: var(--color-secondary); 
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.mpesa-note {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    color: #666;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 6px;
+    border-left: 4px solid var(--color-secondary);
+}
+
+/* --------------------------------------------------------------------------------
+   --- 6. TRACKER VIEW STYLES (Progress and Payment) ---
+   -------------------------------------------------------------------------------- */
+
+.tracker-summary {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f0f8ff;
+    border: 1px solid #cceeff;
+    border-radius: 12px;
+    padding: 2.5rem 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.summary-item h3 {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 0.75rem;
+}
+
+.value-large {
+    font-size: 2.8rem;
+    font-weight: 900;
+}
+
+.value-large.saved {
+    color: var(--color-secondary);
+}
+
+/* Progress Bar */
+.progress-bar-container {
+    background-color: #e0e0e0;
+    border-radius: 20px;
+    height: 35px; /* Taller bar */
+    margin: 2.5rem 0;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.progress-bar {
+    background-color: var(--color-primary);
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: white;
+    font-weight: 700;
+    padding-right: 20px;
+    transition: width 0.8s ease-out;
+}
+
+.tracker-actions {
+    margin-top: 3rem;
+    padding: 2rem;
+    border: 1px dashed #00968850; /* Primary color dashed border */
+    border-radius: 12px;
+    background-color: #fafafa;
+}
+
+.btn-payment {
+    padding: 1rem 2.5rem;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.status-box {
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    background-color: #e0f7fa; 
+    color: #00838f;
+    border-left: 5px solid #00acc1;
+}
+
+/* --------------------------------------------------------------------------------
+   --- 7. RESPONSIVENESS ---
+   -------------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    .savings-goal-page {
+        padding: 2rem 1rem;
+    }
+    .page-title {
+        font-size: 2rem;
+    }
+    .calculator-wrapper {
+        padding: 2rem 1.5rem;
+    }
+    .mode-tabs {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .tracker-summary {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .time-display {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .months-value {
